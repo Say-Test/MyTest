@@ -20,12 +20,12 @@ public class SearchResultPageTest extends BaseClass {
 	private SearchResultPage searchResultPage;
 	
 	@Parameters("browser")
-	@BeforeMethod(groups = {"Smoke","Smoke_new","Sanity","Regression"})
+	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
 	public void setup(String browser) {
 		launchApp(browser); 
 	}
 	
-	@AfterMethod(groups = {"Smoke","Smoke_new","Sanity","Regression"})
+	@AfterMethod(groups = {"Smoke","Sanity","Regression"})
 	public void tearDown() {
 		getDriver().quit();
 	}

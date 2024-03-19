@@ -15,14 +15,14 @@ public class LoginPage extends BaseClass {
 	
 	Action action= new Action();
 	
-	// xpath = "//input[@id='customer_email']"
+	//  id="customer_email"
 	
-	@FindBy(id="customer_email")
+	@FindBy(xpath = "//input[@id='customer_email']")
 	private WebElement email;
 	
-	// xpath = "//input[@id='customer_password']"
+	//  id="customer_password"
 	
-	@FindBy(id="customer_password")
+	@FindBy(xpath = "//input[@id='customer_password']")
 	private WebElement password;
 /*
 	xpath ="//*[@id="main-navi-wrapper"]//font[contains(text(),'Register')]"
@@ -64,7 +64,7 @@ public class LoginPage extends BaseClass {
 		return homePage;
 	}
 	
-	public AddressPage login1(String uname, String pswd,AddressPage addressPage) throws Throwable {
+	public AddressPage login(String uname, String pswd,AddressPage addressPage) throws Throwable {
 		action.scrollByVisibilityOfElement(getDriver(), email);
 		action.type(email, uname);
 		action.type(password, pswd);

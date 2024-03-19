@@ -38,12 +38,12 @@ public class EndToEndTest extends BaseClass {
 	private OrderConfirmationPage orderConfirmationPage;
 
 	@Parameters("browser")
-	@BeforeMethod(groups = {"Smoke","Smoke_new","Sanity","Regression"})
+	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
 	public void setup(String browser) {
 		launchApp(browser); 
 	}
 	
-	@AfterMethod(groups = {"Smoke","Smoke_new","Sanity","Regression"})
+	@AfterMethod(groups = {"Smoke","Sanity","Regression"})
 	public void tearDown() {
 		getDriver().quit();
 	}
@@ -59,7 +59,7 @@ public class EndToEndTest extends BaseClass {
 		addToCartPage.clickOnAddToCart();
 		orderPage=addToCartPage.clickOnCheckOut();
 		loginPage=orderPage.clickOnCheckOut();
-		addressPage=loginPage.login1(prop.getProperty("username"), prop.getProperty("password"),addressPage);
+		addressPage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"),addressPage);
 		shippingPage=addressPage.clickOnCheckOut();
 		shippingPage.checkTheTerms();
 		paymentPage=shippingPage.clickOnProceedToCheckOut();

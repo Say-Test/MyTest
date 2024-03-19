@@ -15,11 +15,15 @@ public class SearchResultPage extends BaseClass {
 	
 	Action action= new Action();
 	
-	@FindBy(xpath="//font[contains(text(),'Shirts & Tops')]")
+	@FindBy(xpath="//h1[contains(text(),'T-Shirts')]")
 	private WebElement productResultTitle;
 	
+//	@FindBy(xpath="//font[contains(text(),'Shirts & Tops')]")
+//	private WebElement productResultTitle;
+	
 	 // xpath ="//*[@id="product box container"]//img"
-	@FindBy(xpath="//*[@id=\"product box container\"]/div[4]/div[1]/div/div/div/div[1]/a/div[1]/img")
+	//  //*[@id="product box container"]//a/div[3] 
+	@FindBy(xpath="//*[@id=\"product box container\"]//a/div[1]/img")
 	private WebElement productResult;
 	
 	public SearchResultPage() {

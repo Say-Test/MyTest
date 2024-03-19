@@ -26,12 +26,12 @@ public class OrderPageTest extends BaseClass {
 	private OrderPage orderPage;
 
 	@Parameters("browser")
-	@BeforeMethod(groups = {"Smoke","Smoke_new","Sanity","Regression"})
+	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
 	public void setup(String browser) {
 		launchApp(browser); 
 	}
 	
-	@AfterMethod(groups = {"Smoke","Smoke_new","Sanity","Regression"})
+	@AfterMethod(groups = {"Smoke","Sanity","Regression"})
 	public void tearDown() {
 		getDriver().quit();
 	}
@@ -45,6 +45,19 @@ public class OrderPageTest extends BaseClass {
 		//addToCartPage.enterQuantity(qty);
 		addToCartPage.clickOnSize();
 		addToCartPage.clickOnAddToCart();
+		orderPage.enterQuantity(qty);
+		
+		//verifyOrderPageUrl
+		String actualOrderURL=orderPage.getCurrURL();
+	    //after AddToCart expected url
+	    String expectedOrderURL="https://integ.globetrotter.de/basket/";
+	    Log.info("Verifying if user is able to proceed");
+	    Assert.assertEquals(actualOrderURL, expectedOrderURL);
+
+	    //Verify selected Size on orderPage div text xpath= //font[contains(text(),'Details: ')]
+		  orderPage.verifySelectedSize(size);
+
+	    
 		orderPage=addToCartPage.clickOnCheckOut();
 		Double unitPrice=orderPage.getUnitPrice();
 		Double totalPrice=orderPage.getTotalPrice();

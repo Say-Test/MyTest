@@ -10,6 +10,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -127,6 +128,9 @@ public class Action extends BaseClass implements ActionInterface {
 			flag = ele.isDisplayed();
 			ele.clear();
 			ele.sendKeys(text);
+			//for qty to reflect in total price
+			//ele.sendKeys(Keys.ENTER); or ele.sendKeys(Keys.TAB);
+			ele.sendKeys(Keys.TAB);
 			// logger.info("Entered text :"+text);
 			flag = true;
 		} catch (Exception e) {
@@ -709,6 +713,8 @@ public class Action extends BaseClass implements ActionInterface {
 		return text;
 	}
 	
+
+	
 	/*@Override
 	public String getTitle(WebDriver driver) {
 		boolean flag = false;
@@ -780,7 +786,7 @@ public class Action extends BaseClass implements ActionInterface {
 			e.getMessage();
 		}
 		// This new path for Jenkins
-		String newImageString = "http://localhost:8082/job/GlobetrotterDeProject/ws/GlobetrotterDeProject/ScreenShots/" + filename
+		String newImageString = "http://localhost:8082/job/Globetrot/ws/GlobetrotterDeProject/ScreenShots/" + filename
 				+ "_" + dateName + ".png";
 		return newImageString;
 	}

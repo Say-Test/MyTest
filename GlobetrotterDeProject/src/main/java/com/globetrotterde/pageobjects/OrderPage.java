@@ -14,17 +14,32 @@ import com.globetrotterde.base.BaseClass;
 public class OrderPage extends BaseClass {
 	Action action = new Action();
 	
-	@FindBy(xpath="//td[@class='cart_unit']/span/span")
+	
+//	qty xpath = //*[@class="text count js-position-count se-quantity-index0"]
+	//xpath = //input[@class="text count js-position-count se-quantity-index0"]
+	
+	@FindBy(xpath="//input[@class='text count js-position-count se-quantity-index0']")
+    private WebElement quantity;
+	
+    //Verify selected Size on orderPage div text xpath= //font[contains(text(),'Details: ')]
+	@FindBy(xpath="//div[@class='table-content product-position clearfix se-basket-price-product-entry ']//font[contains(text(),'Details: ')] ")
+	private WebElement selectedSize;
+	
+	@FindBy(xpath="//span[@class='price small-price se-basket-price-single-item']")
 	private WebElement unitPrice;
 	
-	@FindBy(id="total_price")
+	@FindBy(xpath="//span[@class='price small-price se-basket-price-summarized-article']")
 	private WebElement totalPrice;
 	
-	@FindBy(xpath="//span[text()='Proceed to checkout']")
+	@FindBy(xpath="//*[@id=\"cart-sum-wrap\"]//font[contains(text(),'Proceed to checkout')]")
 	private WebElement proceedToCheckOut;
 	
 	public OrderPage() {
 		PageFactory.initElements(getDriver(), this);
+	}
+	
+	public void enterQuantity(String quantity1) throws Throwable {
+		action.type(quantity, quantity1);
 	}
 
 	public double getUnitPrice() {
@@ -44,6 +59,26 @@ public class OrderPage extends BaseClass {
 	public LoginPage clickOnCheckOut() throws Throwable {
 		action.click(getDriver(), proceedToCheckOut);
 		return new LoginPage();
+	}
+	
+	public String getCurrURL() throws Throwable {
+		String orderPageURL=action.getCurrentURL(getDriver());
+		return orderPageURL;
+	}
+	
+	public String verifySelectedSize(String size) throws Throwable {
+		String orderPageSize=selectedSize.getText();
+		if(orderPageSize.contains(size))
+				{
+			System.out.println("Selected Size is matched with given Size : "+ orderPageSize);
+				}
+			    // Then Second Element that contains the Text Hello is present.
+
+			else 
+			{			System.out.println("Selected Size is not matched with given Size : "+ orderPageSize);
+}
+
+		return orderPageSize;
 	}
 
 }

@@ -24,24 +24,24 @@ public class AddToCartPage extends BaseClass {
 			@FindBy(id="id_importdimgroesse_0")
 			private WebElement xsSize;
 	
-	// S size   //input[@value='S']
-		@FindBy(xpath="//*[@id=\"id_importdimgroesse_1\"]")
+	// S size   //*[@id="id_importdimgroesse_1"]
+		@FindBy(xpath="//input[@value='S']")
 		private WebElement sSize;
 		
-		// M size //input[@value='M']
-		@FindBy(xpath="//*[@id=\"id_importdimgroesse_2\"]")
+		// M size  //*[@id="id_importdimgroesse_2"]
+		@FindBy(xpath="//input[@value='M']")
 		private WebElement mSize;
 	
-	// L size //input[@value='L']
-	@FindBy(xpath="//*[@id=\"id_importdimgroesse_3\"]")
+	// L size  //*[@id="id_importdimgroesse_3"]
+	@FindBy(xpath="//input[@value='L']")
 	private WebElement lSize;
 	
-	// XL size //input[@value='XL']
-	@FindBy(xpath="//*[@id=\"id_importdimgroesse_4\"]")
+	// XL size  //*[@id="id_importdimgroesse_4"]
+	@FindBy(xpath="//input[@value='XL']")
 	private WebElement xlSize;
 	
-	// XXL size  //input[@value='XXL']
-		@FindBy(xpath="//*[@id=\"id_importdimgroesse_5\"]")
+	// XXL size    //*[@id="id_importdimgroesse_5"]
+		@FindBy(xpath="//input[@value='XXL']")
 		private WebElement xxlSize;
 	
 	@FindBy(xpath="//font[contains(text(),'Add to Cart')]")

@@ -32,7 +32,7 @@ public class BaseClass {
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 	
 	//loadConfig method is to load the configuration
-	@BeforeSuite(groups = { "Smoke","Smoke_new","Sanity", "Regression" })
+	@BeforeSuite(groups = { "Smoke","Sanity", "Regression" })
 	
 	public void loadConfig() throws IOException {
 		ExtentManager.setExtent();
@@ -90,7 +90,7 @@ public class BaseClass {
 		getDriver().get(prop.getProperty("url"));
 	}
 	
-	@AfterSuite(groups = { "Smoke", "Smoke_new", "Regression","Sanity" })
+	@AfterSuite(groups = { "Smoke","Regression","Sanity" })
 	public void afterSuite() {
 		ExtentManager.endReport();
 	}
