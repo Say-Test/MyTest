@@ -15,7 +15,7 @@ public interface ActionInterface {
 		public boolean isEnabled(WebDriver ldriver, WebElement ele);
 //		public boolean selectBySendkeys(String value,WebElement ele);
 //		public boolean selectByIndex(WebElement element, int index);
-	//	public boolean selectByValue(WebElement element,String value);
+	    public boolean selectByValue(WebElement element,String value);
 		public boolean selectByVisibleText(String visibletext, WebElement ele);
 	//	public boolean mouseHoverByJavaScript(WebElement locator);
 		public boolean JSClick(WebDriver driver, WebElement ele);

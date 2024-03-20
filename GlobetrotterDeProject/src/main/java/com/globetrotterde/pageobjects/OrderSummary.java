@@ -16,15 +16,26 @@ public class OrderSummary extends BaseClass {
 	
 	Action action= new Action();
 	
-	@FindBy(xpath="//span[contains(text(),'I confirm my order')]")
-	private WebElement confirmOrderBtn;
+	/*
+	 * @FindBy(xpath="//span[contains(text(),'I confirm my order')]") private
+	 * WebElement confirmOrderBtn;
+	 */
+	
+	@FindBy(xpath="//font[contains(text(),'Buy now')]")
+	private WebElement buyNowBtn;
 	
 	public OrderSummary() {
 		PageFactory.initElements(getDriver(), this);
 	}
 
-	public OrderConfirmationPage clickOnconfirmOrderBtn() throws Throwable {
-		action.click(getDriver(), confirmOrderBtn);
-		return new OrderConfirmationPage();
+	/*
+	 * public OrderConfirmationPage clickOnconfirmOrderBtn() throws Throwable {
+	 * action.click(getDriver(), confirmOrderBtn); return new
+	 * OrderConfirmationPage(); }
+	 */
+	public OrderConfirmationPage clickOnbuyNowBtn() throws Throwable {
+	action.click(getDriver(), buyNowBtn); 
+	return new OrderConfirmationPage(); 
 	}
+	
 }

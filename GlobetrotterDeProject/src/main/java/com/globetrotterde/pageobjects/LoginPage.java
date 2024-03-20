@@ -20,10 +20,17 @@ public class LoginPage extends BaseClass {
 	@FindBy(xpath = "//input[@id='customer_email']")
 	private WebElement email;
 	
+	@FindBy(xpath = "//input[@id='customer-email']")
+	private WebElement email1;
+	
+	
 	//  id="customer_password"
 	
 	@FindBy(xpath = "//input[@id='customer_password']")
 	private WebElement password;
+	
+	@FindBy(xpath = "//input[@id='password']")
+	private WebElement password1;
 /*
 	xpath ="//*[@id="main-navi-wrapper"]//font[contains(text(),'Register')]"
 	or
@@ -39,6 +46,9 @@ public class LoginPage extends BaseClass {
 	@FindBy(xpath = "//button[@type='submit']//font[contains(text(),'Register')]")
 	private WebElement loginBtn;
 	
+	//button[@class="btn primary js-spinner"]
+	@FindBy(xpath = "//button[@class='btn primary js-spinner']")
+	private WebElement loginBtn1;
 	/*
 	 * @FindBy(name="email_create") 
 	 * private WebElement emailForNewAccount;
@@ -48,6 +58,8 @@ public class LoginPage extends BaseClass {
 	@FindBy(xpath="//a[@class='btn primary lg']//font[contains(text(),'Create login')]") 
 	private WebElement createNewAccountBtn;
 	
+	@FindBy(xpath="//a[@class='btn primary txt-center']//font[contains(text(),' Create login')]")
+	private WebElement createNewAccountBtn1;
 	
 	public LoginPage() 
 	{
@@ -65,10 +77,10 @@ public class LoginPage extends BaseClass {
 	}
 	
 	public AddressPage login(String uname, String pswd,AddressPage addressPage) throws Throwable {
-		action.scrollByVisibilityOfElement(getDriver(), email);
-		action.type(email, uname);
-		action.type(password, pswd);
-		action.click(getDriver(), loginBtn);
+		action.scrollByVisibilityOfElement(getDriver(), email1);
+		action.type(email1, uname);
+		action.type(password1, pswd);
+		action.click(getDriver(), loginBtn1);
 		Thread.sleep(2000);
 		addressPage=new AddressPage();
 		return addressPage;
@@ -77,6 +89,7 @@ public class LoginPage extends BaseClass {
 	
 	public AccountCreationPage createNewAccount() throws Throwable {
 		//action.type(emailForNewAccount, newEmail);
+		
 		action.click(getDriver(), createNewAccountBtn);
 		return new AccountCreationPage();
 	}

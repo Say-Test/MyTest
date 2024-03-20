@@ -210,7 +210,7 @@ public class Action extends BaseClass implements ActionInterface {
 	 *                    Listbox etc..)
 	 */
 
-/*	@Override
+@Override
 	public boolean selectByValue(WebElement element,String value) {
 		boolean flag = false;
 		try {
@@ -229,7 +229,7 @@ public class Action extends BaseClass implements ActionInterface {
 			}
 		}
 	}
-	*/
+	
 	
 	/**
 	 * select value from DropDown by using selectByVisibleText

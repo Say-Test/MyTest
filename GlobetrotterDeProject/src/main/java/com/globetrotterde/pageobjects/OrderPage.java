@@ -31,7 +31,7 @@ public class OrderPage extends BaseClass {
 	@FindBy(xpath="//span[@class='price small-price se-basket-price-summarized-article']")
 	private WebElement totalPrice;
 	
-	@FindBy(xpath="//*[@id=\"cart-sum-wrap\"]//font[contains(text(),'Proceed to checkout')]")
+	@FindBy(xpath="//div[@id='cart-sum-wrap']//font[contains(text(),'Proceed to checkout')]")
 	private WebElement proceedToCheckOut;
 	
 	public OrderPage() {
