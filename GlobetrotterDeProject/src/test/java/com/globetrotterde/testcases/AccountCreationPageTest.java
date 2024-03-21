@@ -48,7 +48,7 @@ public class AccountCreationPageTest  extends BaseClass {
 		Log.endTestCase("verifyCreateAccountPageTest");
 	}
 	
-	@Test(groups = "Regression",dataProvider = "newAcountDetailsData",dataProviderClass = DataProviders.class)
+	@Test(groups = "Sanity",dataProvider = "newAcountDetailsData",dataProviderClass = DataProviders.class)
 	public void createAccountTest(HashMap<String,String> hashMapValue) throws Throwable {
 		Log.startTestCase("createAccountTest");
 		indexPage= new WebIndexPage();
