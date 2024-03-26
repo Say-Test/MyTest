@@ -18,11 +18,11 @@ public class OrderConfirmationPage extends BaseClass {
 	//English
 	
 	@FindBy(xpath="//font[contains(text(),'Thank you for your order!')]")
-	private WebElement confirmMessag;
+	private WebElement confirmMessag1;
 	
 	//German
 	@FindBy(xpath="//h1[contains(text(),'Danke für deine Bestellung!')]")
-	private WebElement confirmMessag1;
+	private WebElement confirmMessag;
 	
 	public OrderConfirmationPage() {
 		PageFactory.initElements(getDriver(), this);

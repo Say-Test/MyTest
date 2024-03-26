@@ -67,23 +67,32 @@ public class EndToEndTest extends BaseClass {
 		Thread.sleep(Duration.ofSeconds(10));
 		addressPage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"),addressPage);
 		Log.info("Logged in Successfully");
+		
 		//shippingPage=addressPage.clickOnCheckOut();
 		//shippingPage.checkTheTerms();
 		//paymentPage=shippingPage.clickOnProceedToCheckOut();
 		//orderSummary=paymentPage.clickOnPaymentMethod();
-		addressPage.updatePhoneNumber(prop.getProperty("phoneNum"));
-		Log.info("Updated Phone Number.");
+		
+		//update Phone Number as it was having spaces and + sign --- Not needed now, hence commented.
+//		addressPage.updatePhoneNumber(prop.getProperty("phoneNum"));
+//		Log.info("Updated Phone Number.");
 
 		paymentPage=addressPage.clickOnPaymentMethod();
 		Log.info("Clicked on Payment Method.");
 		orderSummary=paymentPage.giveCCDetails(prop.getProperty("cname"), prop.getProperty("cnumber"), prop.getProperty("cvc"), prop.getProperty("exMonth"), prop.getProperty("exYear"));
 		Log.info("Entered Credit card details.");
+		Thread.sleep(Duration.ofSeconds(10));
+
 		orderConfirmationPage=orderSummary.clickOnbuyNowBtn();
 		Log.info("Clicked on Buy now button.");
 		String actualMessage=orderConfirmationPage.validateConfirmMessage();
 		Log.info(actualMessage);
-		String expectedMsg="Thank you for your order!";
+		//German message
+		String expectedMsg="Danke für deine Bestellung!";
+        //English message
+		//String expectedMsg="Thank you for your order!";
 		Assert.assertEquals(actualMessage, expectedMsg);
+		Log.info("Order Confirmation: Please check email within the next 10 minutes and Check Status under My Account.");
 		Log.endTestCase("endToEndTest");
 	}
 
