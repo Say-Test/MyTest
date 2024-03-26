@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="CrossBrowser" parallel="tests" thread-count="3">
+<suite name="CrossBrowser" parallel="tests" thread-count="6">
 	<listeners>
 		<listener class-name="com.globetrotterde.utility.ListenerClass"></listener>
 	</listeners>
 	<test name="ChromeTest">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-<!--			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />-->
-			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
-			<class name="com.globetrotterde.testcases.HomePageTest" />
-			<class name="com.globetrotterde.testcases.OrderPageTest" />
-	  <class name="com.globetrotterde.testcases.AddressPageTest"/>
-      <class name="com.globetrotterde.testcases.PaymentPageTest"/>
+			<class name="com.globetrotterde.testcases.WebIndexPageTest" />
 			<class name="com.globetrotterde.testcases.SearchResultPageTest" />
 			<class name="com.globetrotterde.testcases.LoginPageTest" />
-			<class name="com.globetrotterde.testcases.WebIndexPageTest" />
+			<class name="com.globetrotterde.testcases.HomePageTest" />
+
+			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
+
+			<class name="com.globetrotterde.testcases.OrderPageTest" />
 			<class name="com.globetrotterde.testcases.EndToEndTest" />
+
+			<!--	  <class name="com.globetrotterde.testcases.AccountCreationPageTest"/>-->
+			<!--	  <class name="com.globetrotterde.testcases.AddressPageTest"/>-->
+			<!--      <class name="com.globetrotterde.testcases.PaymentPageTest"/>-->
 		</classes>
 	</test> <!--
 	Test -->
@@ -24,32 +27,38 @@
 	<test name="FireFoxTest">
 		<parameter name="browser" value="FireFox"></parameter>
 		<classes>
-<!--			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />-->
-			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
-			<class name="com.globetrotterde.testcases.HomePageTest" />
-			<class name="com.globetrotterde.testcases.OrderPageTest" />
-	  <class name="com.globetrotterde.testcases.AddressPageTest"/>
-      <class name="com.globetrotterde.testcases.PaymentPageTest"/>
+			<class name="com.globetrotterde.testcases.WebIndexPageTest" />
 			<class name="com.globetrotterde.testcases.SearchResultPageTest" />
 			<class name="com.globetrotterde.testcases.LoginPageTest" />
-			<class name="com.globetrotterde.testcases.WebIndexPageTest" />
+			<class name="com.globetrotterde.testcases.HomePageTest" />
+
+			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
+
+			<class name="com.globetrotterde.testcases.OrderPageTest" />
 			<class name="com.globetrotterde.testcases.EndToEndTest" />
+
+			<!--	  <class name="com.globetrotterde.testcases.AccountCreationPageTest"/>-->
+			<!--	  <class name="com.globetrotterde.testcases.AddressPageTest"/>-->
+			<!--      <class name="com.globetrotterde.testcases.PaymentPageTest"/>-->
 		</classes>
 	</test>
 
 	<test name="EdgeTest">
 		<parameter name="browser" value="Edge"></parameter>
 		<classes>
-<!--			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />-->
-			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
-			<class name="com.globetrotterde.testcases.HomePageTest" />
-			<class name="com.globetrotterde.testcases.OrderPageTest" />
-	  <class name="com.globetrotterde.testcases.AddressPageTest"/>
-      <class name="com.globetrotterde.testcases.PaymentPageTest"/>
+			<class name="com.globetrotterde.testcases.WebIndexPageTest" />
 			<class name="com.globetrotterde.testcases.SearchResultPageTest" />
 			<class name="com.globetrotterde.testcases.LoginPageTest" />
-			<class name="com.globetrotterde.testcases.WebIndexPageTest" />
+			<class name="com.globetrotterde.testcases.HomePageTest" />
+
+			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
+
+			<class name="com.globetrotterde.testcases.OrderPageTest" />
 			<class name="com.globetrotterde.testcases.EndToEndTest" />
+
+			<!--	  <class name="com.globetrotterde.testcases.AccountCreationPageTest"/>-->
+			<!--	  <class name="com.globetrotterde.testcases.AddressPageTest"/>-->
+			<!--      <class name="com.globetrotterde.testcases.PaymentPageTest"/>-->
 		</classes>
 
 	</test> <!--Test -->
