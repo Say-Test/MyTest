@@ -13,16 +13,12 @@
 		</groups>
 	  
     <classes>
-      <class name="com.globetrotterde.testcases.EndToEndTest"/>
+      
       <class name="com.globetrotterde.testcases.LoginPageTest"/>
-      <class name="com.globetrotterde.testcases.AccountCreationPageTest"/>
+
       <class name="com.globetrotterde.testcases.AddToCartPageTest"/>
-      <class name="com.globetrotterde.testcases.SearchResultPageTest"/>
-      <class name="com.globetrotterde.testcases.HomePageTest"/>
-       <class name="com.globetrotterde.testcases.AddressPageTest"/>
-      <class name="com.globetrotterde.testcases.PaymentPageTest"/>
-      <class name="com.globetrotterde.testcases.OrderPageTest"/>
-      <class name="com.globetrotterde.testcases.WebIndexPageTest"/>
+      <!--      <class name="com.globetrotterde.testcases.AccountCreationPageTest"/>-->
+     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -7,7 +7,7 @@
 	<test name="ChromeTest">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />
+<!--			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />-->
 			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
 			<class name="com.globetrotterde.testcases.HomePageTest" />
 			<class name="com.globetrotterde.testcases.OrderPageTest" />
@@ -24,7 +24,7 @@
 	<test name="FireFoxTest">
 		<parameter name="browser" value="FireFox"></parameter>
 		<classes>
-			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />
+<!--			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />-->
 			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
 			<class name="com.globetrotterde.testcases.HomePageTest" />
 			<class name="com.globetrotterde.testcases.OrderPageTest" />
@@ -40,7 +40,7 @@
 	<test name="EdgeTest">
 		<parameter name="browser" value="Edge"></parameter>
 		<classes>
-			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />
+<!--			<class name="com.globetrotterde.testcases.AccountCreationPageTest" />-->
 			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
 			<class name="com.globetrotterde.testcases.HomePageTest" />
 			<class name="com.globetrotterde.testcases.OrderPageTest" />

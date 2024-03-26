@@ -21,7 +21,12 @@ public class OrderSummary extends BaseClass {
 	 * WebElement confirmOrderBtn;
 	 */
 	
+	//English
 	@FindBy(xpath="//font[contains(text(),'Buy now')]")
+	private WebElement buyNowBtnEng;
+	
+	//German //button[@id="checkoutSubmitButton"] div text 'Jetzt kaufen'
+	@FindBy(xpath="//button[@id='checkoutSubmitButton']")
 	private WebElement buyNowBtn;
 	
 	public OrderSummary() {

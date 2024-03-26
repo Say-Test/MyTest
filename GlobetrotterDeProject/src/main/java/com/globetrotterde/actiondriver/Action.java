@@ -128,9 +128,6 @@ public class Action extends BaseClass implements ActionInterface {
 			flag = ele.isDisplayed();
 			ele.clear();
 			ele.sendKeys(text);
-			//for qty to reflect in total price
-			//ele.sendKeys(Keys.ENTER); or ele.sendKeys(Keys.TAB);
-			ele.sendKeys(Keys.TAB);
 			// logger.info("Entered text :"+text);
 			flag = true;
 		} catch (Exception e) {
@@ -146,6 +143,7 @@ public class Action extends BaseClass implements ActionInterface {
 		}
 		return flag;
 	}
+	
 	
 	/*@Override
 	public boolean selectBySendkeys(String value,WebElement ele) {

@@ -1,5 +1,7 @@
 package com.globetrotterde.testcases;
 
+import java.time.Duration;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -57,19 +59,29 @@ public class EndToEndTest extends BaseClass {
 		//addToCartPage.enterQuantity(qty);
 		addToCartPage.clickOnSize();
 		addToCartPage.clickOnAddToCart();
-		orderPage=addToCartPage.clickOnCheckOut();
+		Thread.sleep(Duration.ofSeconds(10));
+		orderPage=addToCartPage.clickOnGoToBasket();
+		Thread.sleep(Duration.ofSeconds(10));
+		orderPage.enterQuantity(String.valueOf((int)Double.parseDouble(qty)));
 		loginPage=orderPage.clickOnCheckOut();
+		Thread.sleep(Duration.ofSeconds(10));
 		addressPage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"),addressPage);
+		Log.info("Logged in Successfully");
 		//shippingPage=addressPage.clickOnCheckOut();
 		//shippingPage.checkTheTerms();
 		//paymentPage=shippingPage.clickOnProceedToCheckOut();
 		//orderSummary=paymentPage.clickOnPaymentMethod();
 		addressPage.updatePhoneNumber(prop.getProperty("phoneNum"));
+		Log.info("Updated Phone Number.");
+
 		paymentPage=addressPage.clickOnPaymentMethod();
+		Log.info("Clicked on Payment Method.");
 		orderSummary=paymentPage.giveCCDetails(prop.getProperty("cname"), prop.getProperty("cnumber"), prop.getProperty("cvc"), prop.getProperty("exMonth"), prop.getProperty("exYear"));
+		Log.info("Entered Credit card details.");
 		orderConfirmationPage=orderSummary.clickOnbuyNowBtn();
-		
+		Log.info("Clicked on Buy now button.");
 		String actualMessage=orderConfirmationPage.validateConfirmMessage();
+		Log.info(actualMessage);
 		String expectedMsg="Thank you for your order!";
 		Assert.assertEquals(actualMessage, expectedMsg);
 		Log.endTestCase("endToEndTest");

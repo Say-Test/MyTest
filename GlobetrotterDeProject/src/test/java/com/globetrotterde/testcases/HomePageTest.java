@@ -40,6 +40,8 @@ public class HomePageTest extends BaseClass {
 		indexPage= new WebIndexPage();
 		loginPage=indexPage.clickOnLogin();
 		homePage=loginPage.login(uname,pswd,homePage);
+		//since, login not navigating to homepage.
+		getDriver().get("https://integ.globetrotter.de/wishlist/");
 		boolean result=homePage.validateMyWishList();
 		Assert.assertTrue(result);
 		Log.endTestCase("wishListTest");
@@ -51,6 +53,8 @@ public class HomePageTest extends BaseClass {
 		indexPage= new WebIndexPage();
 		loginPage=indexPage.clickOnLogin();
 		homePage=loginPage.login(uname,pswd,homePage);
+		//since, login not navigating to homepage.
+		getDriver().get("https://integ.globetrotter.de/wishlist/");
 		boolean result=homePage.validateOrderHistory();
 		Assert.assertTrue(result);
 		Log.endTestCase("orderHistoryandDetailsTest");

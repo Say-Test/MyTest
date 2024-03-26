@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
+
+//import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -36,6 +41,7 @@ public class BaseClass {
 	
 	public void loadConfig() throws IOException {
 		ExtentManager.setExtent();
+		
 		
 		//Not Required for log4j2.xml configuration auto-initializes from src/main/resources
 		//DOMConfigurator.configure("log4j.xml");
@@ -88,6 +94,28 @@ public class BaseClass {
 		getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(prop.getProperty("pageLoadTimeOut"))));
 		//Launching the URL
 		getDriver().get(prop.getProperty("url"));
+		
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(prop.getProperty("implicitWait"))));
+
+	//String str="return document.querySelector('#cmpwrapper').shadowRoot.querySelector('#cmpbntyestxt')";
+		//xpath("//span[@id='cmpbntyestxt']")
+		
+	
+	try {
+		Thread.sleep(Duration.ofSeconds(10));
+		
+		WebElement acceptCookies=(WebElement)getDriver().findElement(By.xpath("//div[@id='cmpwrapper']")).getShadowRoot()
+				  .findElement(By.cssSelector("#cmpbntyestxt")); 
+					  acceptCookies.click(); 
+					  System.out.println("Cookies accepted");
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+//	WebElement acceptCookies=(WebElement)getDriver().findElement(By.xpath("//div[@id='cmpwrapper']")).getShadowRoot()
+//	  .findElement(By.cssSelector("#cmpbntyestxt")); 
+//		  acceptCookies.click(); 
 	}
 	
 	@AfterSuite(groups = { "Smoke","Regression","Sanity" })

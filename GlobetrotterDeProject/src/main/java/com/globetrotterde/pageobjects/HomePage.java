@@ -16,11 +16,17 @@ public class HomePage extends BaseClass {
 	
 	Action action= new Action();
 	
+	//only heart icon 
 	@FindBy(xpath = "//header/div[6]/div[1]/div[1]/div[3]/a[1]/div[1]/*[1]")
 	private WebElement myWishList;
 	
-	@FindBy(xpath = "//font[contains(text(),'Orders/')]")
+	//German order History
+	@FindBy(xpath = "//a[contains(text(),'Bestellungen/')]")
 	private WebElement orderHistory;
+	//English order History
+	@FindBy(xpath = "//font[contains(text(),'Orders/')]")
+	private WebElement orderHistoryEng;
+	
 	
 	public HomePage() {
 		PageFactory.initElements(getDriver(), this);

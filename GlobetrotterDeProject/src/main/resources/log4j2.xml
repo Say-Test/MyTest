@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="log4j2.dtd"?>
 <Configuration monitorinterval="30" status="info" strict="true">
     <Properties>
         <Property name="filename">Logs/log4j2.log</Property>

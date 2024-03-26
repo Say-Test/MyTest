@@ -44,14 +44,30 @@ public class AddToCartPage extends BaseClass {
 		@FindBy(xpath="//input[@value='XXL']")
 		private WebElement xxlSize;
 	
+		//In English 
 	@FindBy(xpath="//font[contains(text(),'Add to Cart')]")
+	private WebElement addToCartBtnEng;
+	
+	//German - add to cart
+	@FindBy(xpath="//button[contains(text(),'In den Warenkorb')]")
 	private WebElement addToCartBtn;
 	
+	
+	//English
 	@FindBy(xpath="//font[contains(text(),'The following item was added to the shopping cart.')]")
+	private WebElement addToCartMessagEng;
+	
+	//German
+	@FindBy(xpath="//div[contains(text(),'Folgender Artikel wurde in den Warenkorb gelegt.')]")
 	private WebElement addToCartMessag;
 	
+	//English
 	@FindBy(xpath="//font[contains(text(),'To the basket of gooods')]")
-	private WebElement proceedToCheckOutBtn;
+	private WebElement proceedToBasketBtnEng;
+	
+	//German
+	@FindBy(xpath="//a[contains(text(),'Zum Warenkorb')]")
+	private WebElement proceedToBasketBtn;
 	
 	public AddToCartPage() {
 		PageFactory.initElements(getDriver(), this);
@@ -63,7 +79,8 @@ public class AddToCartPage extends BaseClass {
 	
 	public void clickOnSize() throws Throwable {
 		
-		action.click(getDriver(), lSize);
+		action.click(getDriver(), xlSize);
+		Thread.sleep(30);
 	}
 	
 //	String searchText = "AppraisersGroupTest";
@@ -100,9 +117,10 @@ public class AddToCartPage extends BaseClass {
 		return action.isDisplayed(getDriver(), addToCartMessag);
 	}
 	
-	public OrderPage clickOnCheckOut() throws Throwable {
-		action.fluentWait(getDriver(), proceedToCheckOutBtn, 10);
-		action.JSClick(getDriver(), proceedToCheckOutBtn);
+	public OrderPage clickOnGoToBasket() throws Throwable {
+//		action.fluentWait(getDriver(), proceedToBasketBtn, 10);
+//		action.JSClick(getDriver(), proceedToBasketBtn);
+		action.click(getDriver(), proceedToBasketBtn);
 		return new OrderPage();
 	}
 	

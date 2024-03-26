@@ -1,10 +1,15 @@
 package com.globetrotterde.pageobjects;
 
+//import java.time.Duration;
+
+//import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.globetrotterde.base.BaseClass;
+//import com.globetrotterde.base.JavascriptExecutor;
 import com.globetrotterde.actiondriver.Action;
 
 /**
@@ -40,12 +45,25 @@ public class WebIndexPage extends BaseClass
 		
 		//click on Ladies English language tab
 				@FindBy(xpath = "//font[text()='Ladies']")
-				private WebElement searchByLadiesTab;	
+				private WebElement searchByLadiesTab;
+				
+				//Accept Cookies
+		@FindBy(css = "#cmpwrapper")	
+		private WebElement root;
+		
+		@FindBy(css = "#cmpbntyestxt")
+		private WebElement acceptAll;
+		//WebElement shadowRoot1 = getDriver().root1.GetShadowRoot().acceptAll; shadowRoot1.click();
+		
+		//String  str	="return document.querySelector('#cmpwrapper').shadowRoot.querySelector('#cmpbntyestxt')";
+		
+
 	
 	//Constructor
 	public WebIndexPage() 
 	{
 		PageFactory.initElements(getDriver(), this);
+				
 	}
 	
 	public LoginPage clickOnLogin() throws Throwable {

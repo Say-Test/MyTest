@@ -42,10 +42,15 @@ public class LoginPage extends BaseClass {
 	           
 	 */
 	
-	//Login - (wrong text) 
+	//Login - (English) 
 	@FindBy(xpath = "//button[@type='submit']//font[contains(text(),'Register')]")
+	private WebElement loginBtnEng;
+	
+	//Login - (German) 
+	@FindBy(xpath = "//div[@class='input-wrapper clearfix']/button")
 	private WebElement loginBtn;
 	
+	//Address page login
 	//button[@class="btn primary js-spinner"]
 	@FindBy(xpath = "//button[@class='btn primary js-spinner']")
 	private WebElement loginBtn1;

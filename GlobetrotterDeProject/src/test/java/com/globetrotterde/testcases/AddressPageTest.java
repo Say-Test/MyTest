@@ -1,8 +1,8 @@
 package com.globetrotterde.testcases;
 
-import java.util.HashMap;
+//import java.util.HashMap;
 
-import org.testng.Assert;
+//import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -11,8 +11,8 @@ import org.testng.annotations.Test;
 import com.globetrotterde.base.BaseClass;
 import com.globetrotterde.dataprovider.DataProviders;
 import com.globetrotterde.pageobjects.AddressPage;
-import com.globetrotterde.pageobjects.PaymentPage;
-import com.globetrotterde.pageobjects.WebIndexPage;
+//import com.globetrotterde.pageobjects.PaymentPage;
+//import com.globetrotterde.pageobjects.WebIndexPage;
 import com.globetrotterde.utility.Log;
 
 public class AddressPageTest   extends BaseClass {
@@ -46,7 +46,7 @@ public class AddressPageTest   extends BaseClass {
 	
 	@Test(groups = "Regression",dataProvider = "editPhone", dataProviderClass = DataProviders.class)
 	public void updatePhoneNumberTest(String PhoneNumber) throws Throwable {
-		Log.startTestCase("update Billing Address Phone Number");
+		Log.startTestCase("update Billing Address Phone Number as it has spaces and /or + sign");
 		addressPage.updatePhoneNumber(PhoneNumber);
 		Log.endTestCase("update Billing Address Phone Number");
 	
