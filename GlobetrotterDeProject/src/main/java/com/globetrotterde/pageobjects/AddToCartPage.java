@@ -79,7 +79,7 @@ public class AddToCartPage extends BaseClass {
 	
 	public void clickOnSize() throws Throwable {
 		
-		action.click(getDriver(), sSize);
+		action.click(getDriver(), xlSize);
 		Thread.sleep(30);
 	}
 	
