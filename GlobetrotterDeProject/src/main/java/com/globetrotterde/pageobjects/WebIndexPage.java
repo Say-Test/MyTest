@@ -87,7 +87,7 @@ public class WebIndexPage extends BaseClass
 		action.type(searchProductBox, productName);
 		action.scrollByVisibilityOfElement(getDriver(), searchButton);
 		action.click(getDriver(), searchButton);
-		Thread.sleep(3000);
+		Thread.sleep(30);
 		return new SearchResultPage();
 	}
 	

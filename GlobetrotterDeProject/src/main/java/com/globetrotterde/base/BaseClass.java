@@ -102,15 +102,17 @@ public class BaseClass {
 		
 	
 	try {
-		Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(5));
 		
 		WebElement acceptCookies=(WebElement)getDriver().findElement(By.xpath("//div[@id='cmpwrapper']")).getShadowRoot()
 				  .findElement(By.cssSelector("#cmpbntyestxt")); 
+
 					  acceptCookies.click(); 
 					  System.out.println("Cookies accepted");
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
+		System.out.println("Cookies popup Not displayed");
 	}
 
 //	WebElement acceptCookies=(WebElement)getDriver().findElement(By.xpath("//div[@id='cmpwrapper']")).getShadowRoot()
