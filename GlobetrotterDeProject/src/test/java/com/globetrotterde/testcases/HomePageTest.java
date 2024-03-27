@@ -43,7 +43,10 @@ public class HomePageTest extends BaseClass {
 		//since, login not navigating to homepage.
 		getDriver().get("https://integ.globetrotter.de/wishlist/");
 		boolean result=homePage.validateMyWishList();
+		Log.info("Wish List is displayed? "+result);
 		Assert.assertTrue(result);
+		homePage.clickOnMyWishList();
+		Log.info("Clicked on My Wish List.");
 		Log.endTestCase("wishListTest");
 	}
 	
@@ -56,7 +59,10 @@ public class HomePageTest extends BaseClass {
 		//since, login not navigating to homepage.
 		getDriver().get("https://integ.globetrotter.de/wishlist/");
 		boolean result=homePage.validateOrderHistory();
+		Log.info("Order History is displayed? "+result);
 		Assert.assertTrue(result);
+		homePage.clickOnOrderHistoryDet();
+		Log.info("Clicked on Order History Details.");
 		Log.endTestCase("orderHistoryandDetailsTest");
 	}
 }

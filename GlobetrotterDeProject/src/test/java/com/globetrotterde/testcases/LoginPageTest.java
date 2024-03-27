@@ -46,7 +46,7 @@ public class LoginPageTest extends BaseClass {
 	    String expectedURL="https://integ.globetrotter.de/login-success/";
 	    Log.info("Verifying if user is able to login");
 	    Assert.assertEquals(actualURL, expectedURL);
-	    Log.info("Login is Success");
+	    Log.info("Login is Successful!");
 	    Log.endTestCase("loginTest");
 	}
 }

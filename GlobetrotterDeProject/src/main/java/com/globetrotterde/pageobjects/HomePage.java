@@ -37,8 +37,18 @@ public class HomePage extends BaseClass {
 		return action.isDisplayed(getDriver(), myWishList);
 	}
 	
+	public void clickOnMyWishList() throws Throwable {
+		action.click(getDriver(), myWishList);
+		
+	}
+	
 	public boolean validateOrderHistory() throws Throwable {
 		return action.isDisplayed(getDriver(), orderHistory);
+	}
+	
+	public void clickOnOrderHistoryDet() throws Throwable {
+		action.click(getDriver(), orderHistory);
+		
 	}
 	
 	public String getCurrURL() throws Throwable {
