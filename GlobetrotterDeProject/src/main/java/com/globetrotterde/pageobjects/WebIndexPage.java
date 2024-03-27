@@ -85,9 +85,10 @@ public class WebIndexPage extends BaseClass
 	public SearchResultPage searchProduct(String productName) throws Throwable 
 	{
 		action.type(searchProductBox, productName);
-		action.scrollByVisibilityOfElement(getDriver(), searchButton);
+		action.fluentWait(getDriver(), searchButton, 10);
+		//action.scrollByVisibilityOfElement(getDriver(), searchButton);
 		action.click(getDriver(), searchButton);
-		Thread.sleep(30);
+		//Thread.sleep(30);
 		return new SearchResultPage();
 	}
 	
