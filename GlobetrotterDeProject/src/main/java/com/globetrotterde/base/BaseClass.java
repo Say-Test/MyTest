@@ -101,19 +101,25 @@ public class BaseClass {
 		//xpath("//span[@id='cmpbntyestxt']")
 		
 	
-	try {
-		Thread.sleep(Duration.ofSeconds(5));
+//	try {
+		//Thread.sleep(Duration.ofSeconds(5));
 		
 		WebElement acceptCookies=(WebElement)getDriver().findElement(By.xpath("//div[@id='cmpwrapper']")).getShadowRoot()
 				  .findElement(By.cssSelector("#cmpbntyestxt")); 
-
+		if(acceptCookies.isDisplayed())
+		{
 					  acceptCookies.click(); 
 					  System.out.println("Cookies accepted");
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		System.out.println("Cookies popup Not displayed");
-	}
+		}	
+		else {
+			System.out.println("Cookies popup Not displayed");
+
+		}
+//	} 
+//	catch (InterruptedException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
 
 //	WebElement acceptCookies=(WebElement)getDriver().findElement(By.xpath("//div[@id='cmpwrapper']")).getShadowRoot()
 //	  .findElement(By.cssSelector("#cmpbntyestxt")); 
