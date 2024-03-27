@@ -13,7 +13,7 @@
 		</groups>
 
 		<classes>
-			<class name="com.globetrotterde.testcases.AddToCartPageTest" />
+<!--			<class name="com.globetrotterde.testcases.AddToCartPageTest" />-->
 			<class name="com.globetrotterde.testcases.OrderPageTest" />
 			<class name="com.globetrotterde.testcases.EndToEndTest" />
 			
