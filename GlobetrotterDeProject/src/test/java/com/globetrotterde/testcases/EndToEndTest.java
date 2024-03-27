@@ -59,12 +59,12 @@ public class EndToEndTest extends BaseClass {
 		//addToCartPage.enterQuantity(qty);
 		addToCartPage.clickOnSize();
 		addToCartPage.clickOnAddToCart();
-		Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(7));
 		orderPage=addToCartPage.clickOnGoToBasket();
-		Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(7));
 		orderPage.enterQuantity(String.valueOf((int)Double.parseDouble(qty)));
 		loginPage=orderPage.clickOnCheckOut();
-		Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(7));
 		addressPage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"),addressPage);
 		Log.info("Logged in Successfully");
 		
@@ -81,7 +81,7 @@ public class EndToEndTest extends BaseClass {
 		Log.info("Clicked on Payment Method.");
 		orderSummary=paymentPage.giveCCDetails(prop.getProperty("cname"), prop.getProperty("cnumber"), prop.getProperty("cvc"), prop.getProperty("exMonth"), prop.getProperty("exYear"));
 		Log.info("Entered Credit card details.");
-		Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(5));
 
 		orderConfirmationPage=orderSummary.clickOnbuyNowBtn();
 		Log.info("Clicked on Buy now button.");

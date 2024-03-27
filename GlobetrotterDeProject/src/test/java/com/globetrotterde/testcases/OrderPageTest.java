@@ -89,7 +89,7 @@ public class OrderPageTest extends BaseClass {
 
 		orderPage.clickOnCheckOut();
 		Log.info("Clicked on Checkout button.");
-		Thread.sleep(Duration.ofSeconds(4));
+		Thread.sleep(Duration.ofSeconds(2));
 
 		Log.endTestCase("verifyTotalPrice");
 	}
