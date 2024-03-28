@@ -20,8 +20,8 @@ public class AddToCartPage extends BaseClass {
 //	@FindBy(id="quantity_wanted")
 //	private WebElement quantity;
 	
-	// XS size- xpath = "//input[@value='XS']"    //*[@id="id_importdimgroesse_0"]  or xpath="//*[@id=\"5637464199_import:dim_GROESSE_1\"]/label/font/font"
-			@FindBy(id="id_importdimgroesse_0")
+	// XS size- id = "id_importdimgroesse_0"  xpath = "//input[@value='XS']"    //*[@id="id_importdimgroesse_0"]  or xpath="//*[@id=\"5637464199_import:dim_GROESSE_1\"]/label/font/font"
+			@FindBy(xpath= "//input[@value='XS']")
 			private WebElement xsSize;
 	
 	// S size   //*[@id="id_importdimgroesse_1"]
@@ -79,7 +79,7 @@ public class AddToCartPage extends BaseClass {
 	
 	public void clickOnSize() throws Throwable {
 		
-		action.click(getDriver(), xlSize);
+		action.click(getDriver(), xsSize);
 		Thread.sleep(30);
 	}
 	
