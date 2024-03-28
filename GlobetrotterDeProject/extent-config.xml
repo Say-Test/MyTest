@@ -28,10 +28,10 @@
     <!-- title of the document -->
     <documentTitle>GlobetrotterDeProject</documentTitle>
 
-    <!-- report name - displayed at top-nav -->
+    <!-- report name - displayed at top-nav -->  
     <reportName>GlobetrotterDeProject Report
 		<![CDATA[
-                <img src='C:\Users\salo\eclipse\GlobetrotterDeProject\Logo\GlobetrotterDE-apple-touch-icon.png'/>
+                <img src='http://localhost:8080/job/Globetrot/ws/GlobetrotterDeProject/Logo/GlobetrotterDE-apple-touch-icon.png'/>
             ]]>
 	</reportName>
 
