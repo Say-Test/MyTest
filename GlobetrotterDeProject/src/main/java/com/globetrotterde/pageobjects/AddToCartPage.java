@@ -100,7 +100,7 @@ public class AddToCartPage extends BaseClass {
 	    }
 		else if(list.get(i).getAttribute("value").equalsIgnoreCase(size1))
 		{
-			
+			System.out.println("Clicked on Size : " +list.get(i).getAttribute("value"));
 		action.click(getDriver(), list.get(i));
 			//Thread.sleep(20);
 		}
