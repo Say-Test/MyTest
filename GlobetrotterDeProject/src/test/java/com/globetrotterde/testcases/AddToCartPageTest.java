@@ -42,7 +42,7 @@ public class AddToCartPageTest extends BaseClass {
 		addToCartPage=searchResultPage.clickOnProduct();
 		//addToCartPage.enterQuantity(qty);
 		//addToCartPage.selectSize(size);
-		addToCartPage.clickOnSize();
+		addToCartPage.clickOnSize(size);
 		addToCartPage.clickOnAddToCart();
 		boolean result=addToCartPage.validateAddtoCart();
 		Assert.assertTrue(result);

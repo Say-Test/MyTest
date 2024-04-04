@@ -47,8 +47,9 @@ public class OrderPageTest extends BaseClass {
 		searchResultPage = index.searchProduct(productName);
 		addToCartPage = searchResultPage.clickOnProduct();
 		// addToCartPage.enterQuantity(qty);
-		addToCartPage.clickOnSize();
-		Log.info("Clicked on Size: " + size);
+		//addToCartPage.clickOnSize();
+		addToCartPage.clickOnSize(size);
+		Log.info("Given Size: " + size);
 		addToCartPage.clickOnAddToCart();
 		Log.info("Clicked on Add to cart button.");
 		// Thread.sleep(Duration.ofSeconds(10));

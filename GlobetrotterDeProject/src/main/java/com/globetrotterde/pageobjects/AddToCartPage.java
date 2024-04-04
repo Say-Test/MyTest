@@ -1,6 +1,9 @@
 
 package com.globetrotterde.pageobjects;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -77,12 +80,36 @@ public class AddToCartPage extends BaseClass {
 //		action.type(quantity, quantity1);
 //	}
 	
-	public void clickOnSize() throws Throwable {
+	public void clickOnSize(String size1) throws Throwable {
+//		 String sizexpath = "//input[@value='" + size1 + "']"; 
+//		 @FindBy(xpath=sizexpath)
+//		 private WebElement pSize;
+		List<WebElement> list = getDriver().findElements(By.cssSelector("#article-form > div.size-variations.js-product-option.product-option.clearfix > div.content.clearfix > div > div.size-menu > ul > li > input "));
 		
-		action.click(getDriver(), xsSize);
-		Thread.sleep(30);
-	}
-	
+		for (int i = 0; i < list.size(); i++)
+		{
+			System.out.println("Size list count : " +list.size());
+		System.out.println(list.get(i).getText());
+		    
+		if(list.size()==1)
+		{
+			System.out.println("Clicked on Size : " +list.get(i).getText());
+		action.click(getDriver(), list.get(i));
+		
+		//Thread.sleep(20);
+	    }
+		else if(list.get(i).getText().equalsIgnoreCase(size1))
+		{
+			
+		action.click(getDriver(), list.get(i));
+			//Thread.sleep(20);
+		}
+		else 
+		{
+			System.out.println("No Relevant element present to click");
+		}
+		}
+	}		
 //	String searchText = "AppraisersGroupTest";
 //	WebElement dropdown = driver.findElement(By.id("grdAvailableGroups"));
 //	dropdown.click(); // assuming you have to click the "dropdown" to open it
