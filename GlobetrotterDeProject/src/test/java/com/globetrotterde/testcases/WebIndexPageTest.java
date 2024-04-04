@@ -1,9 +1,9 @@
 package com.globetrotterde.testcases;
 
-import java.time.Duration;
+//import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

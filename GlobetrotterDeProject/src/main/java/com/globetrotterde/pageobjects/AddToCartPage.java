@@ -89,16 +89,16 @@ public class AddToCartPage extends BaseClass {
 		for (int i = 0; i < list.size(); i++)
 		{
 			System.out.println("Size list count : " +list.size());
-		System.out.println(list.get(i).getText());
+		System.out.println(list.get(i).getAttribute("value"));
 		    
 		if(list.size()==1)
 		{
-			System.out.println("Clicked on Size : " +list.get(i).getText());
+			System.out.println("Clicked on Size : " +list.get(i).getAttribute("value"));
 		action.click(getDriver(), list.get(i));
 		
 		//Thread.sleep(20);
 	    }
-		else if(list.get(i).getText().equalsIgnoreCase(size1))
+		else if(list.get(i).getAttribute("value").equalsIgnoreCase(size1))
 		{
 			
 		action.click(getDriver(), list.get(i));
