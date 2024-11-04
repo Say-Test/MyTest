@@ -24,27 +24,33 @@ public class AddToCartPage extends BaseClass {
 //	private WebElement quantity;
 	
 	// XS size- id = "id_importdimgroesse_0"  xpath = "//input[@value='XS']"    //*[@id="id_importdimgroesse_0"]  or xpath="//*[@id=\"5637464199_import:dim_GROESSE_1\"]/label/font/font"
-			@FindBy(xpath= "//input[@value='XS']")
+			//@FindBy(xpath= "//input[@value='XS']")
+	@FindBy(css="#/35 638087885_import/:dim_GROESSE_1 > label")
 			private WebElement xsSize;
 	
 	// S size   //*[@id="id_importdimgroesse_1"]
-		@FindBy(xpath="//input[@value='S']")
+			@FindBy(css="#/35 638087885_import/:dim_GROESSE_2 > label")
+		//@FindBy(xpath="//input[@value='S']")
 		private WebElement sSize;
 		
-		// M size  //*[@id="id_importdimgroesse_2"]
-		@FindBy(xpath="//input[@value='M']")
+		// M size  //*[@id="id_importdimgroesse_2"]       
+		//@FindBy(xpath="//input[@value='M']")
+			@FindBy(css="#/35 638087885_import/:dim_GROESSE_3 > label")
 		private WebElement mSize;
 	
 	// L size  //*[@id="id_importdimgroesse_3"]
-	@FindBy(xpath="//input[@value='L']")
+		@FindBy(css="#/35 638087885_import/:dim_GROESSE_4 > label")
+	//@FindBy(xpath="//input[@value='L']")
 	private WebElement lSize;
 	
 	// XL size  //*[@id="id_importdimgroesse_4"]
-	@FindBy(xpath="//input[@value='XL']")
+	//@FindBy(xpath="//input[@value='XL']")
+	@FindBy(css="#/35 638087885_import/:dim_GROESSE_5 > label")
 	private WebElement xlSize;
 	
 	// XXL size    //*[@id="id_importdimgroesse_5"]
-		@FindBy(xpath="//input[@value='XXL']")
+		//@FindBy(xpath="//input[@value='XXL']")
+	@FindBy(css="#/35 638087885_import/:dim_GROESSE_6 > label")
 		private WebElement xxlSize;
 	
 		//In English 
@@ -70,6 +76,7 @@ public class AddToCartPage extends BaseClass {
 	
 	//German
 	@FindBy(xpath="//a[contains(text(),'Zum Warenkorb')]")
+	
 	private WebElement proceedToBasketBtn;
 	
 	public AddToCartPage() {
