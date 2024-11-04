@@ -42,8 +42,11 @@ public class LoginPageTest extends BaseClass {
 	    //homePage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		homePage=loginPage.login(uname,pswd,homePage);
 	    String actualURL=homePage.getCurrURL();
-	    //after successful login expected url
-	    String expectedURL="https://integ.globetrotter.de/login-success/";
+	    //after successful login, earlier expected url
+	    //String expectedURL="https://integ.globetrotter.de/login-success/";
+	  
+	    //after successful login, expected url
+	    String expectedURL="https://integ.globetrotter.de/account";
 	    Log.info("Verifying if user is able to login");
 	    Assert.assertEquals(actualURL, expectedURL);
 	    Log.info("Login is Successful!");

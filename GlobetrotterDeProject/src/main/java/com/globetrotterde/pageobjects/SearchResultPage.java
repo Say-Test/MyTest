@@ -23,7 +23,8 @@ public class SearchResultPage extends BaseClass {
 	
 	 // xpath ="//*[@id="product box container"]//img"
 	//  //*[@id="product box container"]//a/div[3] 
-	@FindBy(xpath="//*[@id='product box container']//a/div[1]/img")
+	//@FindBy(xpath="//*[@id='product box container']//a/div[1]/img")
+	@FindBy(xpath="//img[@alt='Fjällräven HEMP BLEND T-SHIRT M Herren - T-Shirt']")
 	private WebElement productResult;
 	
 	public SearchResultPage() {
