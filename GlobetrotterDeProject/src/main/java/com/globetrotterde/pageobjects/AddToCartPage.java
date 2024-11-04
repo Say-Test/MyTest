@@ -91,8 +91,9 @@ public class AddToCartPage extends BaseClass {
 //		 String sizexpath = "//input[@value='" + size1 + "']"; 
 //		 @FindBy(xpath=sizexpath)
 //		 private WebElement pSize;
-		List<WebElement> list = getDriver().findElements(By.cssSelector("#article-form > div.size-variations.js-product-option.product-option.clearfix > div.content.clearfix > div > div.size-menu > ul > li > input "));
-		
+		//old css
+		//List<WebElement> list = getDriver().findElements(By.cssSelector("#article-form > div.size-variations.js-product-option.product-option.clearfix > div.content.clearfix > div > div.size-menu > ul > li > input "));
+		List<WebElement> list = getDriver().findElements(By.cssSelector("#page-wrapper > div.product-detail-page > div.art-detail-page-top.article-detail-context > div:nth-child(3) > div > div > div.product-base-information > div.size-variations.js-product-option.product-option.clearfix > div.content.clearfix > div > div.size-menu > ul > li ")); 
 		for (int i = 0; i < list.size(); i++)
 		{
 			System.out.println("Size list count : " +list.size());
