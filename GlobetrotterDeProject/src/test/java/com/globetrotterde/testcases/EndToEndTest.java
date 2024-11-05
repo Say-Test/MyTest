@@ -62,10 +62,10 @@ public class EndToEndTest extends BaseClass {
 		addToCartPage.clickOnAddToCart();
 		Thread.sleep(Duration.ofSeconds(7));
 		orderPage=addToCartPage.clickOnGoToBasket();
-		Thread.sleep(Duration.ofSeconds(7));
+		Thread.sleep(Duration.ofSeconds(10));
 		orderPage.enterQuantity(String.valueOf((int)Double.parseDouble(qty)));
 		loginPage=orderPage.clickOnCheckOut();
-		Thread.sleep(Duration.ofSeconds(7));
+		Thread.sleep(Duration.ofSeconds(9));
 		addressPage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"),addressPage);
 		Log.info("Logged in Successfully");
 		
