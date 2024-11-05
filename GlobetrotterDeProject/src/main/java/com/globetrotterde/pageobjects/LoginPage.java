@@ -86,7 +86,7 @@ public class LoginPage extends BaseClass {
 		action.type(email1, uname);
 		action.type(password1, pswd);
 		action.click(getDriver(), loginBtn1);
-		Thread.sleep(2000);
+		Thread.sleep(75000);
 		addressPage=new AddressPage();
 		return addressPage;
 	}
