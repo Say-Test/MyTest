@@ -12,7 +12,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.25.0</version>
+			<version>4.24.0</version>
 		</dependency>
 
 		<!--
@@ -120,11 +120,11 @@
 				<version>3.2.5</version>
 				<configuration>
 					<suiteXmlFiles>
-						<!--						 /GlobetrotterDeProject/testng_regression.xml-->
+						<!--	${xmlFiles}   or					 /GlobetrotterDeProject/testng_regression.xml-->
 						<suiteXmlFile>${xmlFiles}</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<!--			${url}				https://integ.globetrotter.de/-->
+						<!--			${url}	or			https://integ.globetrotter.de/-->
 						<appURL>${url}</appURL>
 					</systemPropertyVariables>
 				</configuration>
