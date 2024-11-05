@@ -52,11 +52,11 @@ public class OrderPageTest extends BaseClass {
 		Log.info("Given Size: " + size);
 		addToCartPage.clickOnAddToCart();
 		Log.info("Clicked on Add to cart button.");
-		// Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(5));
 		orderPage = addToCartPage.clickOnGoToBasket();
 		Log.info("Clicked on go to basket button.");
 
-		// Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(Duration.ofSeconds(5));
 
 		// verifyOrderPageUrl
 		String actualOrderURL = orderPage.getCurrURL();
@@ -68,7 +68,7 @@ public class OrderPageTest extends BaseClass {
 
 		orderPage.enterQuantity(String.valueOf((int) Double.parseDouble(qty)));
 		Log.info("Updated quantity.");
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(Duration.ofSeconds(10));
 
 		// Verify selected Size on orderPage div text xpath=
 		// //font[contains(text(),'Details: ')]
